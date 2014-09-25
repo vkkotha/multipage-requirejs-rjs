@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Campaigns</title>
+
+</head>
+
+<body>
+	<p>This is campaigns</p>
+</body>
+<script data-main="/dist/js/common" src="/dist/js/lib/requirejs/require.js"></script>
+
+<script>
+require(["app/campaign"], function(campaign) {
+	campaign({
+		test: "hello"
+	})
+	console.log("Loaded app/dashboard");
+});
+</script></html>

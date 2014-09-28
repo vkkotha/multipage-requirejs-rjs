@@ -1,7 +1,8 @@
-define(function() {
-	//var jqui = require("jqueryui");
-	console.log("loading campaign/index.js");
+console.log("app/campaign/index.js:Start");
+define(["jqueryui"], function() {
+	console.log("app/campaign/index: defined");
 	return function(options) {
-		console.log("Instantiating campaign/index", options);
+		console.log("app/campaign/index: initialized", options);
 	}
 });
+console.log("app/campaign/index.js:End");

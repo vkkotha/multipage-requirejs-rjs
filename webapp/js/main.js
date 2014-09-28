@@ -1,3 +1,5 @@
+console.log("main.js:Start");
+
 require.config({
   paths: {
     bootstrap: 'lib/bootstrap/dist/js/bootstrap',
@@ -15,13 +17,11 @@ require.config({
     jqueryui: {
       deps: ['jquery']
     }
-  }/*,
-  bundles: {
-    "core-libs": ["jquery", "bootstrap", "underscore"],
-    "all-libs": ["jqueryui"]
-  }*/
+  }
 });	
 
-require(["core-libs", "all-libs", "app/common/index"], function() {
-  console.log("Loaded Common/index");
+require(["jquery", "bootstrap", "underscore", "app/modules/common"], function() {
+   console.log("main: defined/Loaded common code and libraries");
 });
+
+console.log("main.js:End");

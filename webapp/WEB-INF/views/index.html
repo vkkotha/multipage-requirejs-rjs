@@ -1,18 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Home</title>
-
+<title>Dashboard</title>
+<script>
+	console.log("index.html: Inline First");
+</script>
 </head>
 
 <body>
-	<p>This is index</p>
+	<p>This is dashboard</p>
 </body>
-<script data-main="/dist/js/common" src="/dist/js/lib/requirejs/require.js"></script>
+<script data-main="/js/main" src="/js/lib/requirejs/require.js"></script>
 
 <script>
-	require(["app/dashboard"], function() {
-		console.log("Dashboard ready");
+require(["./main"], function() {
+	console.log("index.html: Inline Loaded /js/main");
+	require(["app/modules/dashboard"], function(dashboard) {
+		console.log("index.html: Inline Loaded /app/modules/dashboard");
+		dashboard({
+			test: "hello world"
+		});
 	});
+});
+
+console.log("index.html: Inline Last");
 </script>
 </html>

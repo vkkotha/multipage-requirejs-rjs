@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Campaigns</title>
-
+<title>Campaigns</title>
+<script>
+	console.log("campaign/index.html: Inline First");
+</script>
 </head>
 
 <body>
 	<p>This is campaigns</p>
 </body>
-<script data-main="/dist/js/common" src="/dist/js/lib/requirejs/require.js"></script>
+<script data-main="/js/main" src="/js/lib/requirejs/require.js"></script>
 
 <script>
-require(["app/campaign"], function(campaign) {
-	campaign({
-		test: "hello"
-	})
-	console.log("Loaded app/dashboard");
+require(["./main"], function() {
+	console.log("campaign/index.html: Inline Loaded /js/main");
+	require(["app/modules/campaign"], function(campaign) {
+		console.log("campaign/index.html: Inline Loaded /app/modules/campagin");
+		campaign({
+			test: "hello"
+		});
+	});
 });
-</script></html>
+
+console.log("campaign/index.html: Inline Last");
+</script>
+</html>
